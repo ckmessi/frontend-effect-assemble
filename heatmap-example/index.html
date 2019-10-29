@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>heatmap.js example</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <div>
+        <div>Below is the heatmap diagram.</div>
+        <div id="heatmapContainer" style="width: 500px; height: 300px; background-color: aqua;">
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/heatmap.js/2.0.0/heatmap.js"></script>
+<script>
+    var config = {
+        container: document.getElementById('heatmapContainer'),
+        radius: 80,
+        maxOpacity: .8,
+        minOpacity: 0,
+        blur: .75
+    };
+    // create heatmap with configuration
+    var heatmapInstance = h337.create(config);
+    
+    var data = [
+        { x: 100, y: 150, value: 50 },
+        { x: 400, y: 15, value: 80 },
+        { x: 10, y: 120, value: 20 },
+        { x: 200, y: 95, value: 100 },
+    ]
+    heatmapInstance.setData({
+        max: 100,
+        data: data,
+    });
+
+</script>
+</html>
